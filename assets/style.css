@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+
+.misc {
+    color: '#fdf7ef';
+    color: '#fbedd9';
+    color: '#f6d8b2';
+    color: '#efbe82';
+    color: '#e99e58';
+    color: '#e27d2d';
+    color: '#d46522';
+    color: '#b04e1e';
+    color: '#8c3f20';
+    color: '#71351d';
+    color: '#3d190d';
+}
+
+body {
+    background-color: #fbedd9;
+    background: url("~/public/background-emoji.png");
+    background-repeat: repeat;
+    background-size: 100px;
+    font-family: "Fuzzy Bubbles", sans-serif;
+}
+
+p {
+    margin: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    border: 4px solid #efbe82;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    background-color: #f6d8b2;
+    margin-right: 65px;
+    box-shadow: 2px 3px 1px #8c3f20;
+}
+
+.bobaPreview {
+    border: 3px solid #efbe82;
+    border-radius: 5px;
+    background-color: #fbedd9;
+    width: 400px;
+    box-shadow: 2px 3px 1px #8c3f20;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form > div {
+    border: 2px solid #efbe82;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #fbedd9;
+    padding: 10px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 3px 1px #8c3f20;
+}
+
+.radio-input div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.range-input,
+.select-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.select-input select {
+    border-radius: 5px;
+    border: 2px solid #efbe82;
+    height: 2em;
+    width: 20em;
+    font-size: 14px;
+    background-color: #fbedd9;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    box-shadow: 1px 2px 1px #8c3f20;
+    transition: 0.4s;
+}
+
+.select-input select:hover  {
+    border-color: #d46522;
+}
+
+.select-input select:focus {
+    outline: 0;
+}
+
+.range-input div {
+    display: flex;
+}
+
+.range-input input {
+    width: 16em;
+}
+
+.range-input p {
+    width: 3em;
+}
+
+.form-result {
+    flex-direction: row;
+}
+
+button {
+    width: 8em;
+    height: 2em;
+    border-radius: 5px;
+    background-color: #e27d2d;
+    border: none;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-size: 24px;
+    margin-right: 20px;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #e99e58;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
