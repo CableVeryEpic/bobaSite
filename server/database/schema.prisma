@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Base {
+  id      Int     @id @default(autoincrement())
+  Name    String
+  Cost    Float
+  Color   String
+  variety String
+  tag     String
+  Drink   Drink[]
+}
+
+model Drink {
+  id                                    Int     @id @default(autoincrement())
+  Name                                  String
+  Size                                  String
+  BaseID                                Int
+  MilkID                                Int
+  FlavouringID                          Int
+  ToppingOneID                          Int
+  ToppingTwoID                          Int
+  ToppingThreeID                        Int
+  Ice                                   Int     @db.SmallInt
+  Sugar                                 Int     @db.SmallInt
+  Price                                 Float
+  Base                                  Base    @relation(fields: [BaseID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Flavour                               Flavour @relation(fields: [FlavouringID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Milk                                  Milk    @relation(fields: [MilkID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Topping_Drink_ToppingOneIDToTopping   Topping @relation("Drink_ToppingOneIDToTopping", fields: [ToppingOneID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Topping_Drink_ToppingThreeIDToTopping Topping @relation("Drink_ToppingThreeIDToTopping", fields: [ToppingThreeID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Topping_Drink_ToppingTwoIDToTopping   Topping @relation("Drink_ToppingTwoIDToTopping", fields: [ToppingTwoID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Flavour {
+  id    Int     @id @default(autoincrement())
+  Name  String
+  Cost  Float
+  Color String
+  tag   String?
+  Drink Drink[]
+}
+
+model Milk {
+  id    Int     @id @default(autoincrement())
+  Name  String
+  Cost  Float
+  Color String
+  tag   String?
+  Drink Drink[]
+}
+
+model Topping {
+  id                                  Int     @id @default(autoincrement())
+  Name                                String
+  Cost                                Float
+  Color                               String
+  tag                                 String
+  Drink_Drink_ToppingOneIDToTopping   Drink[] @relation("Drink_ToppingOneIDToTopping")
+  Drink_Drink_ToppingThreeIDToTopping Drink[] @relation("Drink_ToppingThreeIDToTopping")
+  Drink_Drink_ToppingTwoIDToTopping   Drink[] @relation("Drink_ToppingTwoIDToTopping")
+}

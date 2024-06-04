@@ -1,10 +1,11 @@
 <script setup>
     defineProps(['name', 'option']);
+    const size = defineModel();
 </script>
 
 <template>
     <div class="radio-item">
-        <input type="radio" v-bind:id='option' v-bind:name="name" v-bind:value="option">
+        <input type="radio" v-model="size" v-bind:id='option' v-bind:name="name" v-bind:value="option">
         <label v-bind:for="option">{{ option }}</label>
     </div>
 </template>

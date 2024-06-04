@@ -1,7 +1,8 @@
 <script setup>
 defineProps(['name']);
 const rangeStrings = ref(['None', 'Min', 'Half', 'Less', 'Full', 'More']);
-let val = ref(4);
+
+let val = defineModel({ default: 4 });
 
 </script>
 

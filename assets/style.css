@@ -16,7 +16,7 @@
 
 body {
     background-color: #fbedd9;
-    background: url("~/public/background-emoji.png");
+    background: url("/public/background-emoji.png");
     background-repeat: repeat;
     background-size: 100px;
     font-family: "Fuzzy Bubbles", sans-serif;
