@@ -1,1 +1,0 @@
-import{_ as a,v as o,x as e,a9 as n,R as r,t as s}from"./DrqtNuZ1.js";const l={},c=e("header",null,[e("h1",null,"Boba Creator")],-1),_=e("footer",null,"A site by Caleb Wittmer",-1);function d(t,u){return s(),o(r,null,[c,e("main",null,[n(t.$slots,"default")]),_],64)}const i=a(l,[["render",d]]);export{i as default};
