@@ -1,6 +1,5 @@
 <script setup>
     import { ref } from "@vue/reactivity";
-    //import { createDrink } from "~/composables/drinkCreation"; 
 
     const { data: bases } = await useFetch('/api/base');
     const { data: milks } = await useFetch('/api/milk');
@@ -24,11 +23,6 @@
     const ice = ref(4);
     const sugar = ref(4);
     const name = ref(null);
-    const price = ref(null);
-
-    // const postDrinkForm = async function () {
-    //     await createDrink(variety.value, milk.value, flavouring.value, toppingOne.value, toppingTwo.value, toppingThree.value, ice.value, sugar.value, name.value, price)
-    // }
 
     function baseVariety(variety) {
         baseVarietyArray.value = baseArray.filter(base => base.variety == variety);
